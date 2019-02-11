@@ -17,4 +17,4 @@ RUN chown -R de-uitdaging:de-uitdaging ./
 USER de-uitdaging
 
 EXPOSE 5000
-ENTRYPOINT ["./boot.sh"]
+RUN flask run
