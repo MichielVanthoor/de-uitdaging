@@ -8,7 +8,7 @@ COPY requirements.txt requirements.txt
 RUN pip3 install -r requirements.txt
 
 COPY app app
-COPY de-uitdaging.py boot.sh ./
+COPY de-uitdaging.py ./
 RUN chmod +x boot.sh
 
 ENV FLASK_APP de-uitdaging.py
