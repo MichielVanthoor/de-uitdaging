@@ -1,2 +1,2 @@
 #!/bin/sh
-exec flask run
+exec flask run --host=0.0.0.0
