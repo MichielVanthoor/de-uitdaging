@@ -1,3 +1,7 @@
+body {
+  font-family: "Avenir Next" !important;
+}
+
 .news-background{
  background-image: linear-gradient(
           rgba(0, 0, 0, 0.5), 
