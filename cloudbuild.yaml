@@ -53,7 +53,7 @@ steps:
   - '-c'
   - |
      sed "s/GOOGLE_CLOUD_PROJECT/${PROJECT_ID}/g" kubernetes.yaml.tpl | \
-     sed "s/COMMIT_SHA/${SHORT_SHA}/g" > de-uitdaging/kubernetes.yaml
+     sed "s/COMMIT_SHA/${SHORT_SHA}/g" > de-uitdaging-env/kubernetes.yaml
 # This step pushes the manifest back to hello-cloudbuild-env
 - name: 'gcr.io/cloud-builders/gcloud'
   id: Push manifest
