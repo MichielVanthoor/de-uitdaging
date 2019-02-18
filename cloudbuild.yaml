@@ -62,7 +62,7 @@ steps:
   - '-c'
   - |
     set -x && \
-    cd hello-cloudbuild-env && \
+    cd d-uitdaging-env && \
     git add kubernetes.yaml && \
     git commit -m "Deploying image gcr.io/${PROJECT_ID}/de-uitdaging:${SHORT_SHA}
     Built from commit ${COMMIT_SHA} of repository de-uitdaging
