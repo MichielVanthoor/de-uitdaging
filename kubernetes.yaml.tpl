@@ -15,34 +15,34 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-cloudbuild
+  name: deuitdaging-dev
   labels:
-    app: hello-cloudbuild
+    app: deuitdaging-dev
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: hello-cloudbuild
+      app: deuitdaging-dev
   template:
     metadata:
       labels:
-        app: hello-cloudbuild
+        app: deuitdaging-dev
     spec:
       containers:
-      - name: hello-cloudbuild
-        image: gcr.io/GOOGLE_CLOUD_PROJECT/hello-cloudbuild:COMMIT_SHA
+      - name: deuitdaging-dev
+        image: gcr.io/GOOGLE_CLOUD_PROJECT/deuitdaging-dev:COMMIT_SHA
         ports:
         - containerPort: 8080
 ---
 kind: Service
 apiVersion: v1
 metadata:
-  name: hello-cloudbuild
+  name: deuitdaging-dev
 spec:
   selector:
-    app: hello-cloudbuild
+    app: deuitdaging-dev
   ports:
   - protocol: TCP
     port: 80
-    targetPort: 8080
+    targetPort: 5000
   type: LoadBalancer
