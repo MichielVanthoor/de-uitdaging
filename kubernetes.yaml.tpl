@@ -30,7 +30,7 @@ spec:
     spec:
       containers:
       - name: deuitdaging-dev
-        image: gcr.io/GOOGLE_CLOUD_PROJECT/deuitdaging:COMMIT_SHA
+        image: gcr.io/GOOGLE_CLOUD_PROJECT/de-uitdaging:COMMIT_SHA
         ports:
         - containerPort: 8080
 ---
