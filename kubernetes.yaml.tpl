@@ -40,7 +40,7 @@ metadata:
   name: de-uitdaging-service
 spec:
   selector:
-    app: de-uitdaging-service
+    app: de-uitdaging-deployment
   ports:
   - protocol: TCP
     port: 80
