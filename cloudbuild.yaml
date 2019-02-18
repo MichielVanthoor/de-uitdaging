@@ -34,7 +34,7 @@ steps:
 # [END cloudbuild]
 
 # [START cloudbuild-trigger-cd]
-# This step clones the hello-cloudbuild-env repository
+# This step clones the de-uitdaging-env repository
 - name: 'gcr.io/cloud-builders/gcloud'
   id: Clone env repository
   entrypoint: /bin/sh
@@ -54,7 +54,7 @@ steps:
   - |
      sed "s/GOOGLE_CLOUD_PROJECT/${PROJECT_ID}/g" kubernetes.yaml.tpl | \
      sed "s/COMMIT_SHA/${SHORT_SHA}/g" > de-uitdaging-env/kubernetes.yaml
-# This step pushes the manifest back to hello-cloudbuild-env
+# This step pushes the manifest back to de-uitdaging-env
 - name: 'gcr.io/cloud-builders/gcloud'
   id: Push manifest
   entrypoint: /bin/sh
@@ -62,7 +62,7 @@ steps:
   - '-c'
   - |
     set -x && \
-    cd d-uitdaging-env && \
+    cd de-uitdaging-env && \
     git add kubernetes.yaml && \
     git commit -m "Deploying image gcr.io/${PROJECT_ID}/de-uitdaging:${SHORT_SHA}
     Built from commit ${COMMIT_SHA} of repository de-uitdaging
