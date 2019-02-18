@@ -15,21 +15,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: deuitdaging-dev
+  name: de-uitdaging-deployment
   labels:
-    app: deuitdaging-dev
+    app: de-uitdaging-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: deuitdaging-dev
+      app: de-uitdaging-deployment
   template:
     metadata:
       labels:
-        app: deuitdaging-dev
+        app: de-uitdaging-deployment
     spec:
       containers:
-      - name: deuitdaging-dev
+      - name: de-uitdaging-deployment
         image: gcr.io/GOOGLE_CLOUD_PROJECT/de-uitdaging:COMMIT_SHA
         ports:
         - containerPort: 8080
@@ -37,10 +37,10 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: deuitdaging-dev
+  name: de-uitdaging-service
 spec:
   selector:
-    app: deuitdaging-dev
+    app: de-uitdaging-service
   ports:
   - protocol: TCP
     port: 80
