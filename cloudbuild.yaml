@@ -53,7 +53,7 @@ steps:
   - '-c'
   - |
      sed "s/GOOGLE_CLOUD_PROJECT/${PROJECT_ID}/g" kubernetes.yaml.tpl | \
-     sed "s/COMMIT_SHA/${SHORT_SHA}/g" > hello-cloudbuild-env/kubernetes.yaml
+     sed "s/COMMIT_SHA/${SHORT_SHA}/g" > de-uitdaging/kubernetes.yaml
 # This step pushes the manifest back to hello-cloudbuild-env
 - name: 'gcr.io/cloud-builders/gcloud'
   id: Push manifest
@@ -65,7 +65,7 @@ steps:
     cd hello-cloudbuild-env && \
     git add kubernetes.yaml && \
     git commit -m "Deploying image gcr.io/${PROJECT_ID}/de-uitdaging:${SHORT_SHA}
-    Built from commit ${COMMIT_SHA} of repository hello-cloudbuild-app
+    Built from commit ${COMMIT_SHA} of repository de-uitdaging
     Author: $(git log --format='%an <%ae>' -n 1 HEAD)" && \
     git push origin candidate
 # [END cloudbuild-trigger-cd]
