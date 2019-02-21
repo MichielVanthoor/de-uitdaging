@@ -1,5 +1,6 @@
 body {
   font-family: "Avenir Next" !important;
+  padding-bottom: 70px; //Too make sure footer does not overlap text
 }
 
 .news-background{
