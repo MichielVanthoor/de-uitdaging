@@ -43,6 +43,6 @@ spec:
     app: de-uitdaging-deployment
   ports:
   - protocol: TCP
-    port: 80
+    port: 8080
     targetPort: 5000
-  type: LoadBalancer
+  type: NodePort
