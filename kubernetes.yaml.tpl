@@ -50,8 +50,8 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: basic-ingress
+  name: de-uitdaging-ingress
 spec:
   backend:
     serviceName: de-uitdaging-service
-    servicePort: 8080
+    servicePort: 80
