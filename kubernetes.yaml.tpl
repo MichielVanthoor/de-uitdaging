@@ -19,7 +19,7 @@ metadata:
   labels:
     app: de-uitdaging-deployment-gclb
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: de-uitdaging-deployment-gclb
