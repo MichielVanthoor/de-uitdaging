@@ -31,8 +31,6 @@ spec:
       containers:
       - name: de-uitdaging-deployment
         image: gcr.io/GOOGLE_CLOUD_PROJECT/de-uitdaging:COMMIT_SHA
-        ports:
-        - containerPort: 5000
 ---
 kind: Service
 apiVersion: v1
