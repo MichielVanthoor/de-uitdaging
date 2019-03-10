@@ -42,8 +42,8 @@ spec:
   selector:
     app: de-uitdaging-deployment-gclb
   ports:
-  - protocol: TCP
-    targetPort: 8080
+  - port: 8080
+    protocol: TCP
   type: NodePort
 ---
 apiVersion: extensions/v1beta1
