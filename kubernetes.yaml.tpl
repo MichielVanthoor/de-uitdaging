@@ -33,24 +33,3 @@ spec:
         image: gcr.io/GOOGLE_CLOUD_PROJECT/de-uitdaging:COMMIT_SHA
         ports:
         - containerPort: 5000
----
-kind: Service
-apiVersion: v1
-metadata:
-  name: de-uitdaging-service-gclb
-spec:
-  selector:
-    app: de-uitdaging-deployment-gclb
-  ports:
-  - port: 5000
-    protocol: TCP
-  type: NodePort
----
-apiVersion: extensions/v1beta1
-kind: Ingress
-metadata:
-  name: de-uitdaging-ingress-gclb
-spec:
-  backend:
-    serviceName: de-uitdaging-service-gclb
-    servicePort: 5000
