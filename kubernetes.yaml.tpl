@@ -46,3 +46,12 @@ spec:
     port: 8080
     targetPort: 5000
   type: NodePort
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: basic-ingress
+spec:
+  backend:
+    serviceName: de-uitdaging-service
+    servicePort: 8080
