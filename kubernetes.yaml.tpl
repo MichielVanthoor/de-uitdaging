@@ -54,4 +54,4 @@ metadata:
 spec:
   backend:
     serviceName: de-uitdaging-service
-    servicePort: 80
+    servicePort: 5000
