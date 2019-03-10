@@ -53,4 +53,4 @@ metadata:
 spec:
   backend:
     serviceName: de-uitdaging-service-gclb
-    servicePort: 5000
+    servicePort: 8080
