@@ -40,7 +40,7 @@ spec:
   selector:
     app: de-uitdaging-deployment-gclb
   ports:
-  - port: 8080
+  - port: 80
     protocol: TCP
   type: NodePort
 ---
@@ -51,4 +51,4 @@ metadata:
 spec:
   backend:
     serviceName: de-uitdaging-service-gclb
-    servicePort: 8080
+    servicePort: 80
