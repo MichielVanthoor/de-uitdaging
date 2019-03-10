@@ -15,18 +15,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: de-uitdaging-deployment
+  name: de-uitdaging-deployment-gclb
   labels:
-    app: de-uitdaging-deployment
+    app: de-uitdaging-deployment-gclb
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: de-uitdaging-deployment
+      app: de-uitdaging-deployment-gclb
   template:
     metadata:
       labels:
-        app: de-uitdaging-deployment
+        app: de-uitdaging-deployment-gclb
     spec:
       containers:
       - name: de-uitdaging-deployment
@@ -37,10 +37,10 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: de-uitdaging-service
+  name: de-uitdaging-service-gclb
 spec:
   selector:
-    app: de-uitdaging-deployment
+    app: de-uitdaging-deployment-gclb
   ports:
   - protocol: TCP
     port: 8080
@@ -50,8 +50,8 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: de-uitdaging-ingress
+  name: de-uitdaging-ingress-gclb
 spec:
   backend:
-    serviceName: de-uitdaging-service
+    serviceName: de-uitdaging-service-gclb
     servicePort: 5000
