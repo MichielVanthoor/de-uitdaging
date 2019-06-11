@@ -1,17 +1,5 @@
-@font-face {
-        font-family: 'Avenir Next';
-        font-weight: normal;
-        font-style: normal;
-        font-variant:normal;
-        src: url('./fonts/AvenirNext-Regular/AvenirNext-Regular.eot?#iefix') format('eot'),
-        url('./fonts/AvenirNext-Regular/AvenirNext-Regular.otf')  format('opentype'),
-        url('./fonts/AvenirNext-Regular/AvenirNext-Regular.woff') format('woff'),
-        url('./fonts/AvenirNext-Regular/AvenirNext-Regular.ttf')  format('truetype'),
-        url('./fonts/AvenirNext-Regular/AvenirNext-Regular.svg#AvenirNext-Regular') format('svg');
-    }
-
 body {
-  font-family: "Avenir Next" !important;
+  font-family: "Lato" !important;
   padding-bottom: 70px; //Too make sure footer does not overlap text
 }
 
