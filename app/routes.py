@@ -1,11 +1,11 @@
-from flask import render_template
+from flask import render_template, request, redirect
 from app import app
 
 
 @app.before_request
 def before_request():
-    if request.url.startswith('http://'):
-        url = request.url.replace('http://', 'https://', 1)
+    if not request.is_secure:
+        url = request.url.replace("http://", "https://", 1)
         code = 301
         return redirect(url, code=code)
 
