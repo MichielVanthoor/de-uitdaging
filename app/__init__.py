@@ -1,7 +1,7 @@
 from flask import Flask
-from flask_sslify import SSLify
+from flask_talisman import Talisman
 
 app = Flask(__name__)
-sslify = SSLify(app)
+Talisman(app)
 
 from app import routes
