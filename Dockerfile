@@ -1,11 +1,11 @@
-FROM python:3.6-alpine
+FROM python
 
-RUN adduser -D de-uitdaging
+RUN useradd -ms /bin/bash de-uitdaging
 
 WORKDIR /home/de-uitdaging
 
 COPY requirements.txt requirements.txt
-RUN pip3 install -r requirements.txt
+RUN pip install -r requirements.txt
 
 COPY app app
 COPY de-uitdaging.py boot.sh ./

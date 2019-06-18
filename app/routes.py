@@ -1,6 +1,8 @@
+import firebase_admin
 from flask import render_template
 from app import app
 
+default_app = firebase_admin.initialize_app()
 
 @app.route('/')
 @app.route('/index')
@@ -10,3 +12,7 @@ def index():
 @app.route('/over_ons')
 def over_ons():
     return render_template('over_ons.html')
+
+@app.route('/sandbox')
+def sandbox():
+	return render_template('sandbox.html')
