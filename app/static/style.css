@@ -26,3 +26,7 @@ body {
 .site-footer {
   background-color: #333333;
 }
+
+.header {
+  background: red;
+}
