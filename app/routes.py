@@ -1,5 +1,3 @@
-import firebase_admin
-
 from app import app
 
 from flask import render_template, request, redirect
