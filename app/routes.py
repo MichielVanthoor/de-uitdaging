@@ -2,7 +2,7 @@ import firebase_admin
 
 from app import app
 
-from flask import render_template, request, redirect
+from flask import render_template, request
 from flask_sslify import SSLify
 from werkzeug.contrib.fixers import ProxyFix
 
