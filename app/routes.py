@@ -1,5 +1,5 @@
 import firebase_admin
-from flask import render_template
+from flask import render_template, request
 from app import app
 
 default_app = firebase_admin.initialize_app()
