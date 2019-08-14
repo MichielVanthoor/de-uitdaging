@@ -1,14 +1,14 @@
 import firebase_admin
-from flask import render_template, request, redirect
+
 from app import app
 
-default_app = firebase_admin.initialize_app()
+from flask import render_template, request, redirect
+from flask_sslify import SSLify
+from werkzeug.contrib.fixers import ProxyFix
 
-@app.before_request
-def before_request():
-    if request.url.startswith('http://'):
-        url = request.url.replace('http://', 'https://', 1)
-        return redirect(url, code=301)
+default_app = firebase_admin.initialize_app()
+app.wsgi_app = ProxyFix(app.wsgi_app)
+sslify = SSLify(app)
 
 @app.route('/')
 @app.route('/index')
