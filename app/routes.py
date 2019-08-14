@@ -4,7 +4,6 @@ from flask import render_template, request, redirect
 from flask_sslify import SSLify
 from werkzeug.contrib.fixers import ProxyFix
 
-default_app = firebase_admin.initialize_app()
 app.wsgi_app = ProxyFix(app.wsgi_app)
 sslify = SSLify(app)
 
