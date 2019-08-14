@@ -1,2 +1,4 @@
 Flask==1.0.2
 Gunicorn==19.9.0
+flask_sslify
+werkzeug
