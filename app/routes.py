@@ -8,7 +8,10 @@ from werkzeug.contrib.fixers import ProxyFix
 
 default_app = firebase_admin.initialize_app()
 app.wsgi_app = ProxyFix(app.wsgi_app)
-Talisman(app)
+csp = {
+    'default-src': '\'self\''
+}
+talisman = Talisman(app, content_security_policy=csp)
 
 @app.route('/')
 @app.route('/index')
