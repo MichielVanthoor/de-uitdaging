@@ -12,6 +12,7 @@ SSLify(app)
 @app.route('/index')
 def index():
     mode = os.environ['MODE']
+    print(mode)
     if mode == "development":
         return render_template('index.html', mode=mode)
 
