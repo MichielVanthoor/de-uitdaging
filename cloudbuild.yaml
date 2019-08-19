@@ -1,24 +1,12 @@
 steps:
   # build the container image
 - name: 'gcr.io/cloud-builders/docker'
-<<<<<<< HEAD
-  args: ['build', '-t', 'gcr.io/$PROJECT_ID/de-uitdaging', '.']
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/$_IMAGENAME', '.']
   # push the container image to Container Registry
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/$PROJECT_ID/de-uitdaging']
+  args: ['push', 'gcr.io/$PROJECT_ID/$_IMAGENAME']
   # Deploy container image to Cloud Run
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['beta', 'run', 'deploy', 'de-uitdaging', '--image', 'gcr.io/$PROJECT_ID/de-uitdaging', '--region', 'europe-west1','--platform', 'managed']
+  args: ['beta', 'run', 'deploy', '$_IMAGENAME', '--image', 'gcr.io/$PROJECT_ID/$_IMAGENAME', '--region', 'europe-west1','--platform', 'managed']
 images:
-- gcr.io/$PROJECT_ID/de-uitdaging
-=======
-  args: ['build', '-t', 'gcr.io/$PROJECT_ID/de-uitdaging-dev', '.']
-  # push the container image to Container Registry
-- name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/$PROJECT_ID/de-uitdaging-dev']
-  # Deploy container image to Cloud Run
-- name: 'gcr.io/cloud-builders/gcloud'
-  args: ['beta', 'run', 'deploy', 'de-uitdaging-dev', '--image', 'gcr.io/$PROJECT_ID/de-uitdaging-dev', '--region', 'europe-west1','--platform', 'managed']
-images:
-- gcr.io/$PROJECT_ID/de-uitdaging-dev
->>>>>>> origin/develop
+- gcr.io/$PROJECT_ID/$_IMAGENAME
