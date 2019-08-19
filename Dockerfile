@@ -12,6 +12,7 @@ COPY de-uitdaging.py boot.sh ./
 RUN chmod +x boot.sh
 
 ENV FLASK_APP de-uitdaging.py
+ENV MODE ${MODE}
 
 RUN chown -R de-uitdaging:de-uitdaging ./
 USER de-uitdaging

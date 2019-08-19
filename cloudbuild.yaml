@@ -1,12 +1,16 @@
 steps:
+  # set the mode in the Dockerfile
+- name: gcr.io/${PROJECT_ID}/envsubst
+  env: ["MODE=$_MODE"]
+  args: ["Dockerfile"]
   # build the container image
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/$PROJECT_ID/$_IMAGENAME', '.']
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/$_IMAGE_NAME', '.']
   # push the container image to Container Registry
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['push', 'gcr.io/$PROJECT_ID/$_IMAGENAME']
+  args: ['push', 'gcr.io/$PROJECT_ID/$_IMAGE_NAME']
   # Deploy container image to Cloud Run
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: ['beta', 'run', 'deploy', '$_IMAGENAME', '--image', 'gcr.io/$PROJECT_ID/$_IMAGENAME', '--region', 'europe-west1','--platform', 'managed']
+  args: ['beta', 'run', 'deploy', '$_IMAGE_NAME', '--image', 'gcr.io/$PROJECT_ID/$_IMAGE_NAME', '--region', 'europe-west1','--platform', 'managed']
 images:
-- gcr.io/$PROJECT_ID/$_IMAGENAME
+- gcr.io/$PROJECT_ID/$_IMAGE_NAME
