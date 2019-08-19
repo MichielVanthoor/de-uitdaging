@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-<title> {{ mode }}</title>
+{% if mode %}
+   <title>DEVELOP ENVIRONMENT</title>
+{% endif %}
 
 <!-- Uitdaging section-->
 <section class="jumbotron mb-0 text-center news-background">
