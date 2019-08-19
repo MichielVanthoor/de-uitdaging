@@ -1,5 +1,3 @@
-import firebase_admin
-
 from app import app
 
 from flask import render_template, request
@@ -18,7 +16,3 @@ def index():
 @app.route('/over_ons')
 def over_ons():
     return render_template('over_ons.html')
-
-@app.route('/sandbox')
-def sandbox():
-	return render_template('sandbox.html')
