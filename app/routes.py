@@ -14,7 +14,7 @@ SSLify(app)
 # Use the application default credentials and connect db
 cred = credentials.ApplicationDefault()
 firebase_admin.initialize_app(cred, {
-  'projectId': '',
+  'projectId': 'de-uitdaging',
 })
 
 db = firestore.client()
