@@ -1,10 +1,12 @@
 from app import app
 
+import firebase_admin
+import os
+
 from firebase_admin import credentials
 from firebase_admin import firestore
 from flask import render_template, request
 from flask_sslify import SSLify
-import os
 from werkzeug.contrib.fixers import ProxyFix
 
 # Configure HTTPS redirect
