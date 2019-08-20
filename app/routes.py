@@ -37,6 +37,6 @@ def projects():
     docs = users_ref.stream()
 
     for doc in docs:
-        print(u'Cause was {}'.format(doc.cause)
+        print(u'Cause was {}'.format(doc.cause))
 
     return render_template('projects.html')
