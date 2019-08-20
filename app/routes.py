@@ -36,7 +36,7 @@ def about_us():
 @app.route('/projects')
 def projects():
     projects = db.collection(u'projects')
-    docs = users_ref.stream()
+    docs = projects.stream()
 
     for doc in docs:
         print(u'Cause was {}'.format(doc.cause))
