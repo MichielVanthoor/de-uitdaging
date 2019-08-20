@@ -13,9 +13,6 @@ SSLify(app)
 def index():
     mode = os.environ['MODE']
     print(mode)
-    if mode == "development":
-        return render_template('index.html', mode=mode)
-
     return render_template('index.html')
 
 @app.route('/over_ons')
