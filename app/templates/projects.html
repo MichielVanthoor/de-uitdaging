@@ -1,14 +1,35 @@
 {% extends "base.html" %}
 
 {% block content %}
-<!-- Uitdaging section-->
+<!-- Banner section-->
 <section class="jumbotron mb-0 text-center news-background">
   <div class="container">
     <div class="row">
       <h1 class="jumbotron-heading text-white"><strong>PROJECTS</strong></h1>
     </div>
-    <div class="row px-5 py-2 col-10 offset-1">
-      <p class="lead text-white">Sinds 2015 gaan we jaarlijks fysieke uitdagingen aan. Hiermee verzamelen we steun voor lokale organisaties, die met onze steun dagelijks het verschil maken voor mensen om ons heen.</p>
+  </div>
+</section>
+
+<!-- Table section-->
+<section class="jumbotron mb-0 text-center news-background">
+  <div class="container">
+    <div class="row">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Goed doel</th>
+            <th scope="col">Hoeveelheid opgehaald</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for doc in docs %}
+          <tr>
+            <td> {{ doc.get('cause') }}</td>
+            <td> {{ doc.get('amount') }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
     </div>
   </div>
 </section>

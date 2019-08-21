@@ -37,7 +37,4 @@ def projects():
     projects = db.collection(u'projects')
     docs = projects.stream()
 
-    for doc in docs:
-        print(u'Cause was {}'.format(doc.get('cause')))
-
-    return render_template('projects.html')
+    return render_template('projects.html', docs=docs)
