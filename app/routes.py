@@ -25,8 +25,7 @@ db = firestore.client()
 @app.route('/')
 @app.route('/index')
 def index():
-    mode = os.environ['MODE']
-    print(mode)
+    print(os.environ['PROJECT_ID'])
     return render_template('index.html')
 
 @app.route('/over_ons')
