@@ -34,7 +34,6 @@ def about_us():
 
 @app.route('/projects')
 def projects():
-    projects = db.collection(u'projects')
-    docs = projects.stream()
+    projects = db.collection(u'projects').order_by(u'date').steam()
 
-    return render_template('projects.html', docs=docs)
+    return render_template('projects.html', projects=projects)

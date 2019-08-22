@@ -22,10 +22,10 @@
           </tr>
         </thead>
         <tbody>
-          {% for doc in docs %}
+          {% for project in projects %}
           <tr>
-            <td> {{ doc.get('cause') }}</td>
-            <td> {{ doc.get('amount') }}</td>
+            <td> {{ project.get('cause') }}</td>
+            <td> {{ project.get('amount') }}</td>
           </tr>
           {% endfor %}
         </tbody>
