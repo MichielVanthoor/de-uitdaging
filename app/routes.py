@@ -15,13 +15,12 @@ SSLify(app)
 
 # Use the application default credentials and connect db
 cred = credentials.ApplicationDefault()
+print('Staging area: '+os.environ['PROJECT_ID'])
 if 'PROJECT_ID' in os.environ:
-    print('Staging area: '+os.environ['PROJECT_ID'])
     firebase_admin.initialize_app(cred, {
       'projectId': os.environ['PROJECT_ID']
     })
-
-db = firestore.client()
+    db = firestore.client()
 
 # Overview of all the routes
 @app.route('/')
