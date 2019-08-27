@@ -15,9 +15,11 @@ SSLify(app)
 
 # Use the application default credentials and connect db
 cred = credentials.ApplicationDefault()
-firebase_admin.initialize_app(cred, {
-  'projectId': os.environ['PROJECT_ID']
-})
+if 'PROJECT_ID' in os.environ:
+    print('Staging area: '+os.environ['PROJECT_ID'])
+    firebase_admin.initialize_app(cred, {
+      'projectId': os.environ['PROJECT_ID']
+    })
 
 db = firestore.client()
 
@@ -25,7 +27,6 @@ db = firestore.client()
 @app.route('/')
 @app.route('/index')
 def index():
-    print(os.environ['PROJECT_ID'])
     return render_template('index.html')
 
 @app.route('/over_ons')
