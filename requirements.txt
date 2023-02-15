@@ -1,5 +1,5 @@
 Flask
 Gunicorn
-werkzeug==0.16.0
+werkzeug==2.2.3
 flask_sslify
 firebase_admin
